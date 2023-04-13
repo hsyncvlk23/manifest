@@ -9,11 +9,15 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="https://android-review.googlesource.com/"
-           revision="refs/tags/android-10.0.0_r2" />
+           revision="refs/tags/android-security-10.0.0_r75" />
   <default revision="refs/heads/t-alps-q0.mp1-V9.122.1"
            remote="github"
            sync-j="4" />
+		   
+  <superproject name="platform/superproject" remote="aosp" revision="android-security-10.0.0_r75" />
+  <contactinfo bugurl="go/repo-bug" />
 
+							  
   <project path="build/make" name="mtk-watch/android_build_make" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -94,7 +98,7 @@
   <project path="external/aac" name="platform/external/aac" groups="pdk" remote="aosp" />
   <project path="external/adeb" name="platform/external/adeb" groups="pdk" remote="aosp" />
   <project path="external/adhd" name="platform/external/adhd" groups="pdk" remote="aosp" />
-  <!--<project path="external/adt-infra" name="platform/external/adt-infra" groups="adt-infra,notdefault,pdk-fs" remote="aosp" />-->
+  <project path="external/adt-infra" name="platform/external/adt-infra" groups="adt-infra,notdefault,pdk-fs" remote="aosp" />
   <project path="external/android-clat" name="platform/external/android-clat" groups="pdk" remote="aosp" />
   <project path="external/androidplot" name="platform/external/androidplot" groups="pdk" remote="aosp" />
   <project path="external/ant-glob" name="platform/external/ant-glob" groups="pdk" remote="aosp" />
@@ -526,7 +530,7 @@
   <project path="hardware/qcom/sdm845/display" name="platform/hardware/qcom/sdm845/display" groups="qcom_sdm845" remote="aosp" />
   <project path="hardware/qcom/sdm845/gps" name="platform/hardware/qcom/sdm845/gps" groups="qcom_sdm845" remote="aosp" />
   <project path="hardware/qcom/sdm845/media" name="platform/hardware/qcom/sdm845/media" groups="qcom_sdm845" remote="aosp" />
-  <!--<project path="hardware/qcom/sdm845/thermal" name="platform/hardware/qcom/sdm845/thermal" groups="generic_fs,qcom_sdm845" remote="aosp" />-->
+  <project path="hardware/qcom/sdm845/thermal" name="platform/hardware/qcom/sdm845/thermal" groups="generic_fs,qcom_sdm845" remote="aosp" />
   <project path="hardware/qcom/sdm845/vr" name="platform/hardware/qcom/sdm845/vr" groups="generic_fs,qcom_sdm845" remote="aosp" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk-qcom" remote="aosp" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" remote="aosp" />
@@ -754,26 +758,26 @@
   <project path="toolchain/benchmark" name="toolchain/benchmark" remote="aosp" />
   <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" groups="pdk" remote="aosp" />
   <project path="tools/acloud" name="platform/tools/acloud" groups="tools,vts,projectarch,pdk,tradefed" remote="aosp" />
-  <!--<project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" remote="aosp" />-->
+  <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" remote="aosp" />
   <project path="tools/apksig" name="platform/tools/apksig" groups="pdk,tradefed" remote="aosp" />
   <project path="tools/apkzlib" name="platform/tools/apkzlib" groups="pdk,tradefed" remote="aosp" />
   <project path="tools/asuite" name="platform/tools/asuite" groups="pdk" remote="aosp" />
-  <!--<project path="tools/base" name="platform/tools/base" groups="notdefault,tools" remote="aosp" />-->
-  <!--<project path="tools/build" name="platform/tools/build" groups="notdefault,tools" remote="aosp" />-->
+  <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" remote="aosp" />
+  <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" remote="aosp" />
   <project path="tools/currysrc" name="platform/tools/currysrc" groups="pdk" remote="aosp" />
   <project path="tools/dexter" name="platform/tools/dexter" groups="tools,pdk-fs" remote="aosp" />
   <project path="tools/external_updater" name="platform/tools/external_updater" groups="tools" remote="aosp" />
   <project path="tools/external/fat32lib" name="platform/tools/external/fat32lib" groups="tools" remote="aosp" />
   <project path="tools/external/gradle" name="platform/tools/external/gradle" groups="tools" clone-depth="1" remote="aosp" />
-  <!--<project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" remote="aosp" />-->
+  <project path="tools/idea" name="platform/tools/idea" groups="notdefault,tools" remote="aosp" />
   <project path="tools/loganalysis" name="platform/tools/loganalysis" groups="nopresubmit,pdk,tradefed" remote="aosp" />
   <project path="tools/metalava" name="platform/tools/metalava" groups="pdk,tools" remote="aosp" />
-  <!--<project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" remote="aosp" />-->
+  <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" remote="aosp" />
   <project path="tools/ndkports" name="platform/tools/ndkports" groups="pdk" remote="aosp" />
   <project path="tools/repohooks" name="platform/tools/repohooks" groups="adt-infra,cts,developers,motodev,pdk,tools,tradefed" remote="aosp" />
   <project path="tools/security" name="platform/tools/security" groups="pdk,tools" remote="aosp" />
-  <!--<project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" remote="aosp" />-->
-  <!--<project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" />-->
+  <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" remote="aosp" />
+  <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" />
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" remote="aosp" />
   <project path="tools/test/graphicsbenchmark" name="platform/tools/test/graphicsbenchmark" groups="pdk" remote="aosp" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" remote="aosp" />
@@ -784,5 +788,20 @@
 
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+  
+  <remote name="opengapps" fetch="https://github.com/opengapps/"  />
+<remote name="opengapps-gitlab" fetch="https://gitlab.opengapps.org/opengapps/"  />
+
+<project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
+
+<project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+
+<!-- arm64 depends on arm -->
+<project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+<project path="vendor/opengapps/sources/arm64" name="arm64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+
+
+<project path="vendor/opengapps/sources/x86" name="x86" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+<project path="vendor/opengapps/sources/x86_64" name="x86_64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
 
 </manifest>
